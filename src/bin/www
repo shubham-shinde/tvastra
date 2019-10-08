@@ -1,0 +1,19 @@
+#!/usr/bin/node
+var debug = require('debug')('my-application');
+var mongoose = require('mongoose');
+var app = require('../app');
+var config = require('../../config');
+
+app.set('port', process.env.PORT || config.PORT || 3001);
+
+
+mongoose.connect(config.DB_URL, { useNewUrlParser: true });
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+  console.log('DB connected.');
+});
+
+var server = app.listen(app.get('port'), function () {
+  debug('Express server listening on port ' + server.address().port);
+});
