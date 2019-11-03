@@ -1,0 +1,122 @@
+
+    
+.container6{
+    display: flex;
+    flex-direction: column;
+    background-color: #8fcaf1;
+    padding: 2rem 1.5rem;
+    color: #021433;
+    text-align: center; 
+}
+.container6 .text{
+    display: flex;
+    flex-direction: column;
+}
+.container6 .text h2{
+    color: white;
+    font-weight: 550;
+    margin: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+.container6 button{
+    background-color: #0099ff;
+    width: 15rem;
+    height: 4rem;
+    color: white;
+    border: none;
+    align-self: center;
+    margin: 1rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.container7 {
+    display: flex;
+    flex-direction: column;
+    background-color: #010b1d;
+    color: white;
+    text-align: center;
+}
+.container7 img{
+    align-self: center;
+    height: 3rem;
+    width: 10rem;
+    margin: 3rem 2rem;
+    background: transparent;
+    border: none;
+}
+.container7 .text{
+    color: #cccccc;
+    font-size: 20px;
+    margin: 0.5rem;
+}
+.container7 .footer{
+    font-size: 12px;
+    margin: 0.5rem;
+    color: #636668;
+}
+.container8{
+    padding: 2rem 6rem 0.5rem;
+    display: none;
+    flex-direction: row;
+    color: #021433;
+    text-align: center;
+    justify-content: space-between;
+}
+.container8 img{
+    align-self: center;
+    height: 2.5rem;
+    width: 10rem;
+}
+.container8 .text{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+}
+.container8 .text a,p{
+    text-decoration: none;
+    color: #021433;
+    margin-right: 1rem;
+}
+.container8 .text i{
+    color: #021433;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+
+@media only screen and (min-width:760px) and (max-width:1000px){
+    .container7{
+        display: none;
+    }
+    .container8{
+        display: flex;
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+}
+
+@media only screen and (min-width:1000px){
+    .container7{
+        display: none;
+    }
+    .container8{
+        display: flex;
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+    .container6{
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+    .container6 .text{
+        text-align: left;
+    }
+}
+
+

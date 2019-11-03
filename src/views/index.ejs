@@ -7,16 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/index/reset.css" type="text/css" />
-    <link rel="stylesheet" href="css/index/stylesheet.css" type="text/css" />
-
-    <script src="https://use.fontawesome.com/898e5ca425.js"></script>
-    <link
+    <link rel="stylesheet" href="css/index/tvastra.css" type="text/css" />
+    <link rel="stylesheet" href="css/index/nav.css" type="text/css" />
+    <link rel="stylesheet" href="css/index/footer.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="css/index/stylesheet.css" type="text/css" /> -->
+    
+    <!-- <script src="https://use.fontawesome.com/898e5ca425.js"></script> -->
+    <!-- <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
       integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
       crossorigin="anonymous"
-    />
-    <link
+    /> -->
+    <!-- <link
       href="https://fonts.googleapis.com/css?family=Archivo"
       rel="stylesheet"
     />
@@ -35,275 +39,271 @@
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
-    />
+    /> -->
   </head>
 
   <body>
     <% include ./partials/common/header %>
 
-    <main class="ss">
-      <div class="intro">
-        <h1>Find Affordable Healthcare</h1>
+    <div class="container1">
+        <h1>
+            Find Affordable Healthcare
+        </h1>
         <p>
-          Join the thousands of others who have exercised their right to
-          quality<br />
-          healthcare at a price you can afford.
+            Join the thousands of others who have exercised their right to quality healthcare at a price you can afford.
         </p>
-        <div class="searchbar">
-          <form class="searchform">
-            <div class="location-search">
-              <i class="fas fa-map-marker-alt location-marker"></i>
-              <input type="text" name="city" placeholder="Location" />
+        <div class="input1">
+            <div class="input_container">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <input type="text" placeholder="Ahmedabad">
+                <img src="images/gps.png">
             </div>
-            <div class="doctor-search">
-              <input
-                type="text"
-                name="city"
-                placeholder="Search for doctors,hospitals and treatments"
-              />
+            <div class="input_container2">
+                <input type="text" placeholder="Search for doctors,hospitals and treatment">
             </div>
-            <button class="search-button">Search</button>
-          </form>
+            <button> Search</button>
         </div>
-      </div>
-    </main>
+    </div>
+    <div class="container2">
+        <h2>
+            How it works
+        </h2>
+        <p>
+            Various facilities are provided here. But there is a protocol which needs to followed so that you may get
+            the service at its best.
+        </p>
+        <div class="screen_container">
+            <div class="button_container">
+                <button id="button1" onclick="myFunction2(this.id)" autofocus>
+                    <div class="content">
+                        <div class="number" id="number1">01</div>
+                        <div class="head" id="head1">Fix Consultation</div>
+                    </div>
+                </button>
+                <div class="para" id="para1"></div>
+                <button id="button2" onclick="myFunction2(this.id)">
+                    <div class="content">
+                        <div class="number" id="number2">02</div>
+                        <div class="head" id="head2">Upload Medical Reports</div>
+                    </div>
+                </button>
+                <div class="para" id="para2"></div>
+                <button id="button3" onclick="myFunction2(this.id)">
+                    <div class="content">
+                        <div class="number" id="number3">03</div>
+                        <div class="head" id="head3">Consult with doctor</div>
+                    </div>
+                </button>
+                <div class="para" id="para3"></div>
+                <button id="button4" onclick="myFunction2(this.id)">
+                    <div class="content">
+                        <div class="number" id="number4">04</div>
+                        <div class="head" id="head4">Fix Surgery</div>
+                    </div>
+                </button>
+                <div class="para" id="para4"></div>
+                <button id="button5" onclick="myFunction2(this.id)">
+                    <div class="content">
+                        <div class="number" id="number5">05</div>
+                        <div class="head" id="head5">Hospital sent estimates</div>
+                    </div>
+                </button>
+                <div class="para" id="para5"></div>
+                <button id="button6" onclick="myFunction2(this.id)">
+                    <div class="content">
+                        <div class="number" id="number6">06</div>
+                        <div class="head" id="head6">Payment</div>
+                    </div>
+                </button>
+                <div class="para" id="para6"></div>
+                <button id="button7" onclick="myFunction2(this.id)">
+                    <div class="content">
+                        <div class="number" id="number7">07</div>
+                        <div class="head" id="head7">Surgery Completed</div>
+                    </div>
+                </button>
+                <div class="para" id="para7"></div>
+            </div>
+            <div class="image_container" id="image_container_id">
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        <h2>
+            World class expert doctors!
+        </h2>
+        <p>The University of Texas Southwestern Medical Center has long been a world-renowned research hospital. But
+            until the ’80s, you couldn’t go there. Now, with the addition of the Aston center and Zale Lipshy hospital,
+            UT Southwestern is also a mecca for patient care.</p>
+        <div class="images">
+            <div class="img_container">
+                <img src="images/image--002.jpg">
+                <h3>Duke Sanson</h3>
+                <p>Neuro Surgeon</p>
+                <p>Chain Department of Neurological Surgery</p>
+                <p>Australia</p>
+            </div>
+            <div class="img_container">
+                <img src="images/image--004.jpg">
+                <h3>Georgia Peter</h3>
+                <p>Breast Cancer surgeon</p>
+                <p>Director, UT Southwest</p>
+                <p>London</p>
+            </div>
+            <div class="img_container">
+                <img src="images/image--005.jpg">
+                <h3>Charlie Moon</h3>
+                <p>Cardiac Surgeon</p>
+                <p>MBBS,MD,FRCP,MRCP,Fellowship</p>
+                <p>New Delhi, India</p>
+            </div>
+            <div class="img_container">
+                <img src="images/image--003.jpg">
+                <h3>Rose Moon</h3>
+                <p>Plastic Surgeon</p>
+                <p>Department of Plastic and Reconstructive Surgery</p>
+                <p>Dubai</p>
+            </div>
+        </div>
+    </div>
+    <div class="container4">
+        <h2>
+            Featured Medical Treatments
+        </h2>
+        <p>
+            The hospital provides various medical treatments done by our expert doctors. Your health is our priority.
+        </p>
+        <div class="images">
+            <div class="img_container image-1">
 
-    <main class="howitwork">
-      <h2>How it works</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-        ullamcorper suscipit lobortis nisl ut
-      </p>
-      <div class="section">
-        <div class="section-a">
-          <ul>
-            <a href="#"
-              ><li>
-                <span class="number">01</span>
-                <span class="text">Fix Consultation</span>
-              </li></a
-            >
-            <a href="#">
-              <li>
-                <span class="number">02</span>
-                <span class="text">Upload Medical Reports</span>
-              </li></a
-            >
-            <a href="#">
-              <li>
-                <span class="number">03</span>
-                <span class="text"> Consult with doctor</span>
-              </li></a
-            >
-            <a href="#">
-              <li>
-                <span class="number">04</span>
-                <span class="text"> Fix Surgery</span>
-              </li></a
-            >
-            <a href="#"
-              ><li>
-                <span class="number">05</span>
-                <span class="text">Hospital sent estimates</span>
-              </li></a
-            >
-            <a href="#"
-              ><li>
-                <span class="number">06</span>
-                <span class="text"> Payment</span>
-              </li></a
-            >
-            <a href="#">
-              <li>
-                <span class="number">07</span>
-                <span class="text"> Surgery Completed</span>
-              </li></a
-            >
-          </ul>
+                <h4>Cancer</h4>
+                <p>50+ Specialists</p>
+            </div>
+            <div class="img_container image-2">
+                <h4>Dentistry</h4>
+                <p>20+ Specialists</p>
+            </div>
+            <div class="img_container image-3">
+                <h4>Orthopedics Surgery</h4>
+                <p>10+ Specialists</p>
+            </div>
+            <div class="img_container image-4">
+                <h4>Cardiology Treatment</h4>
+                <p>50+ Specialists</p>
+            </div>
+            <div class="img_container image-5">
+                <h4>Infertility Treatment</h4>
+                <p>40+ Specialists</p>
+            </div>
         </div>
-        <div class="section-b">
-          <img class="work" src="images/How_it_Works-02.png" />
-          <span class="workdetail"
-            ><h3>Fix Consultation</h3>
-            <p>
-              This depicts that user will have to fix appointment<br />
-              first when it selects a particular doctor
-            </p></span
-          >
-        </div>
-      </div>
-    </main>
-    <aside>
-      <p class="ahead">World class expert doctors!</p>
-      <p class="ades">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-        ullamcorper suscipit lobortis nisl ut
-      </p>
+    </div>
+    <div class="container5">
+        <h2>
+            Exclusive Services
+        </h2>
+        <p>
+            We want you to be comfortable and thus apart from treating your illness, we provide you with other services
+            that can ease you.
+        </p>
+        <div class="logos_container">
+            <div class="element">
+                <button><img src="images/Icons-01.png">
+                    <p>Travel</p>
+                </button>
+            </div>
+            <div class="element">
+                <button><img src="images/Icons-02.png">
+                    <p>Food</p>
+                </button>
 
-      <div class="docdes">
-        <div class="doc1">
-          <div class="doc1">
-            <img class="image1" src="images/Female-Doctor-PNG-Free-Download.png" />
-          </div>
-          <div class="doc1des">
-            <div class="doc1des1">
-              <p class="none"></p>
-              <p class="docname">Charlie Moon</p>
             </div>
-            <p class="docspec">
-              Cardiac Surgeon<br />
-              MBBS,MD,FRCP,MRCP,Fellowship<br />
-              New Delhi, India
-            </p>
-            <div class="borderfooter"></div>
-          </div>
-        </div>
-        <div class="doc1">
-          <div class="doc1image">
-            <img class="image1" src="images/istockphoto-830343990-612x612.jpg" />
-          </div>
-          <div class="doc1des">
-            <div class="doc1des1">
-              <p class="none"></p>
-              <p class="docname">Charlie Moon</p>
-            </div>
-            <p class="docspec">
-              Cardiac Surgeon<br />
-              MBBS,MD,FRCP,MRCP,Fellowship<br />
-              New Delhi, India
-            </p>
-            <div class="borderfooter"></div>
-          </div>
-        </div>
-        <div class="doc1">
-          <div class="doc1image"><img class="image1" src="images/abc.png" /></div>
-          <div class="doc1des">
-            <div class="doc1des1">
-              <p class="none"></p>
-              <p class="docname">Charlie Moon</p>
-            </div>
-            <p class="docspec">
-              Cardiac Surgeon<br />
-              MBBS,MD,FRCP,MRCP,Fellowship<br />
-              New Delhi, India
-            </p>
-          </div>
-          <div class="borderfooter"></div>
-        </div>
-        <div class="doc1">
-          <div class="doc1image">
-            <img class="image1" src="images/gettyimages-468613710-612x612.jpg" />
-          </div>
-          <div class="doc1des">
-            <div class="doc1des1">
-              <p class="none"></p>
-              <p class="docname">Charlie Moon</p>
-            </div>
-            <p class="docspec">
-              Cardiac Surgeon<br />
-              MBBS,MD,FRCP,MRCP,Fellowship<br />
-              New Delhi, India
-            </p>
-            <div class="borderfooter"></div>
-          </div>
-        </div>
-      </div>
-      <i class="fas fa-circle next_page1"></i>
-      <i class="fas fa-circle next_page"></i>
-      <i class="fas fa-circle next_page"></i>
-      <i class="fas fa-circle next_page"></i>
-    </aside>
-    <section class="features">
-      <p class="feature1">Featured Medical Treatments</p>
-      <p class="feature2">
-        Lorem ipsum dolor sit amet, consectetuer adipiscrper suscipit lobortis
-        nisl ut
-      </p>
-      <div class="sec-item1">
-        <div class="secelement1">
-          <div class="element_descrip">
-            <h3>Dentistry</h3>
-            <p>50+ Specialist</p>
-          </div>
-        </div>
-        <div class="secelement2">
-          <div class="element_descrip">
-            <h3>Cancer</h3>
-            <p>50+ Specialist</p>
-          </div>
-        </div>
-        <div class="secelement3">
-          <div class="element_descrip">
-            <h3>Cardiology</h3>
-            <p>50+ Specialist</p>
-          </div>
-        </div>
-        <div class="secelement4">
-          <div class="element_descrip">
-            <h3>Multi Organ Transplant</h3>
-            <p>50+ Specialist</p>
-          </div>
-        </div>
-        <div class="secelement5">
-          <div class="element_descrip">
-            <h3>Orthopedics Surgery</h3>
-            <p>50+ Specialist</p>
-          </div>
-        </div>
-        <div class="secelement6">
-          <div class="element_descrip">
-            <h3>Infertility Treatment</h3>
-            <p>50+ Specialist</p>
-          </div>
-        </div>
-      </div>
-      <i class="fas fa-circle next_page2"></i>
-      <i class="fas fa-circle next_page"></i>
-      <i class="fas fa-circle next_page"></i>
-    </section>
+            <div class="element">
+                <button><img src="images/Icons-03.png">
+                    <p>Accommodation</p>
+                </button>
 
-    <section class="exclusive">
-      <p class="e1">Exclusive Services</p>
-      <p class="e2">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-        ullamcorper suscipit lobortis nisl ut
-      </p>
-      <div class="exitems">
-        <div class="exitem1">
-          <img src="images/Icons-01.png" />
-          <p>TRAVEL</p>
+            </div>
+            <div class="element">
+                <button><img src="images/Icons-07.png">
+                    <p>Labs</p>
+                </button>
+
+            </div>
+            <div class="element">
+                <button><img src="images/Icons-10.png">
+                    <p>Reports</p>
+                </button>
+
+            </div>
+            <div class="element">
+                <button><img src="images/Icons-06.png">
+                    <p>Ambulance</p>
+                </button>
+
+            </div>
         </div>
-        <div class="exitem1">
-          <img src="images/Icons-02.png" />
-          <p>FOOD</p>
-        </div>
-        <div class="exitem3">
-          <img src="images/Icons-03.png" />
-          <p>ACCOMMODATION</p>
-        </div>
-        <div class="exitem1">
-          <img src="images/Icons-07.png" />
-          <p>LABS</p>
-        </div>
-        <div class="exitem1">
-          <img src="images/Icons-10.png" />
-          <p>REPORTS</p>
-        </div>
-        <div class="exitem1">
-          <img src="images/Icons-12.png" />
-          <p>OTHERS</p>
-        </div>
-      </div>
-    </section>
+    </div>
 
     
     <% include ./partials/common/footer %>
 
   </body>
+  <script>
+      var img = [];
+      img[0] = "/images/img1.png";
+      img[1] = "/images/img2.png";
+      img[2] = "/images/img3.jpeg";
+      img[3] = "/images/img4.jpeg";
+      img[4] = "/images/img5.jpg";
+      img[5] = "/images/img6.jpg";
+      img[6] = "/images/img7.jpeg";
+      var heading = [];
+      heading[0] = "Fix Consultation";
+      heading[1] = "Upload Medical Reports";
+      heading[2] = "Consult with doctor";
+      heading[3] = "Fix Surgery";
+      heading[4] = "Hospital sent estimates";
+      heading[5] = "Payment";
+      heading[6] = "Surgery completed";
+      var content = [];
+      content[0] = "This depicts that user will have to fix appointment first when it selects a particular doctor.";
+      content[1] = "This depicts that user will have to upload the medical reports of their medical history if any.";
+      content[2] = "This depicts that user can then visit the doctor and take the prescription as per their case.";
+      content[3] = "This depicts that user will be given an appointment for the surgery if applicable according to the preference of the patient as well as doctor";
+      content[4] = "This depicts that we will be providing user with the estimated bill which he will have to pay during of after the treatment";
+      content[5] = "This depicts that user need to pay the amount for the treatment.";
+      content[6] = "This depicts that the patient is now all fine and the treatment is over.";
+      var a = document.getElementById('para1');
+      console.log(document.getElementsByClassName('para'))
+      a.innerHTML = "<img src='" + img[0] + "'> <h2>" + heading[0] + "</h2> <p>" + content[0] + "</p>";
+      document.getElementById('image_container_id').innerHTML = "<img src='" + img[0] + "'> <h2>" + heading[0] + "</h2> <p>" + content[0] + "</p>";
+      function myFunction2(id) {
+          var sub = id.substr(id.length - 1);
+          var x = document.getElementById("para" + sub);
+          var image_id = document.getElementById('image_container_id');
+          var comp = getComputedStyle(image_id, null)
+          if (comp.display === 'block') {
+              document.getElementById('image_container_id').innerHTML = "<img src='" + img[sub - 1] + "'> <h2>" + heading[sub - 1] + "</h2> <p>" + content[sub - 1] + "</p>";
+          }
+          else {
+              if (x.style.display === "flex") {
+                  x.style.display = "none";
+              }
+              else {
+                  for (let i = 1; i < 8; i++) {
+                      if (i != x) {
+                          let d = document.getElementById('para' + i);
+                          d.style.display = 'none';
+                      }
+                  }
+                  x.style.display = "flex";
+                  x.style.flexDirection = "column";
+                  x.innerHTML = "<img src='" + img[sub - 1] + "'> <h2>" + heading[sub - 1] + "</h2> <p>" + content[sub - 1] + "</p>";
+  
+  
+              }
+          }
+      }        
+  </script>
+  
 </html>

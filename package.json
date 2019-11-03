@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon ./src/bin/www",
+    "start": "nodemon --exec babel-node ./src/bin/www",
     "server": "babel-watch ./src/bin/www",
     "dev": "npm-run-all server"
   },

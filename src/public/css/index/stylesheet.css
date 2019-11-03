@@ -777,7 +777,7 @@ aside .ades {
   letter-spacing: 0.6px;
   border-radius: 3%;
   color: white; }
-
+/* 
 footer {
   padding: 0px 100px;
   display: -webkit-box;
@@ -791,7 +791,7 @@ footer {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 40px;
-  padding-bottom: 30px; }
+  padding-bottom: 30px; } */
 
 .left {
   -webkit-box-flex: 1;

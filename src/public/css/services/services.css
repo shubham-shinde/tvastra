@@ -1,0 +1,48 @@
+.container5{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: #021433;
+    padding: 1rem;
+}
+.container5 h2{
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+.container5 p{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+.container5 .logos_container{
+    align-self: center;
+    display: grid;
+    grid-template-columns:auto auto;
+    grid-template-rows: auto;
+    margin: 2rem;
+    grid-gap: 1.2rem;    
+}
+.container5 .logos_container .element{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    background: #e1e0e2f1;
+    border-radius: 8px;
+}
+.container5 .logos_container .element button{
+    border: none;
+    align-content: center;
+    background: none;    
+}
+.container5 .logos_container .element p{
+    align-self: center;
+    font-weight: 520;
+    color: #8d8787;
+}

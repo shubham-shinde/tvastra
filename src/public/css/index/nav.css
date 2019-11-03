@@ -1,0 +1,107 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 72px;
+}
+
+nav .logo{
+    padding: 0.5rem;
+    width: 9rem;
+    height: 2.5rem;
+    align-self: center;
+}
+
+nav .menu{
+    display: flex;
+    
+    flex-direction: row;
+    text-align: right;
+    padding: 0.5rem;
+    color: #525659;
+    }
+nav .menu i{
+    padding: 0.5rem;
+    color: #525659;
+}
+nav .menu button{
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    outline: none;
+}
+
+nav .menu_options{
+    display: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 18px;
+    /* margin: 0rem 2%; */
+}
+nav .menu_options a{
+    align-self: center;
+    text-decoration: none;
+    color: #021433;
+    margin: 0.7rem;
+}
+nav .menu_options2{
+    text-align: right;
+    align-items: flex-end;
+    display: none;
+    flex-direction: row;
+}
+nav .menu_options2 button{
+    height: 2.6rem;
+    width: 8.7rem;
+    background: none;
+    outline: none;
+    border: 1px solid #021433;
+    align-self: center;
+    border-radius: 3px;
+    margin: 0rem 0.2rem;
+}
+
+#link{
+    display: none;
+}
+
+#link li{
+    text-decoration: none;
+    background-color: #021433;
+    padding: 10px 12px;
+    z-index: 1;
+}
+#link li a{
+    color: white;
+    text-decoration: none;
+}
+@media only screen and (min-width:1000px){
+    nav{
+        padding: 0rem 5%;
+    }
+    nav .menu{
+        display: none;
+    }
+    nav img{
+        height: 2.5rem;
+        width: 10.3rem;
+        
+    }
+    nav .menu_options2{
+        display: flex;
+    }
+    nav .menu_options{
+        display: flex;
+    }
+}
+@media only screen and (min-width:760px) and (max-width:1000px){
+    nav .menu_options2{
+        display: none;
+    }
+    nav .menu_options{
+        display: none;
+    }
+    nav .menu{
+        display: flex;
+    }
+}
