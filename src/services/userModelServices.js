@@ -11,17 +11,17 @@ const addUser = async (props, cb) => {
         if(role === "doctor"){
             const { specialisation, listoftreatment, 
             workexperience, qualification, awards, 
-            location, avgfees } = props;
+            location, avgfees, hospital } = props;
 
             if(!specialisation || !listoftreatment || 
-            !workexperience || !qualification || !awards || !location || !avgfees ){
+            !workexperience || !qualification || !awards || !location || !avgfees || !hospital ){
                 throw errMsg.INCOMPLETE_ARGUMENTS;
             }
             const passHash = await crypticServices.cyptify({password});
             const _user = {
                 name , email, password : passHash, role, 
                 specialisation, listoftreatment, 
-                workexperience, qualification, awards, location, avgfees
+                workexperience, qualification, awards, location, avgfees, hospital
             };
             const _new_user = new User(_user);
             const new_user = await _new_user.save();

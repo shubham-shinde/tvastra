@@ -3,16 +3,16 @@ import User from '../models/userModel';
 
 export const addDoctor = async (req, res, next) => {
     const {name, email, password, role, specialisation, listoftreatment, 
-        workexperience, qualification, awards, location, avgfees} = req.body;
+        workexperience, qualification, awards, location, avgfees, hospital} = req.body;
 
     if(!name || !email || !password || !role || !specialisation || !listoftreatment || 
-    !workexperience || !qualification || !awards || !location || !avgfees ){
+    !workexperience || !qualification || !awards || !location || !avgfees || !hospital ){
         res.redirect('/admin')
         res.end();
     }
     const _user = {
         name, email, password, role, specialisation, listoftreatment, 
-        workexperience, qualification, awards, location, avgfees
+        workexperience, qualification, awards, location, avgfees, hospital
     }
     try{
         const new_user = await userModelServices.add(_user);
@@ -27,7 +27,10 @@ export const addDoctor = async (req, res, next) => {
 export const getDoctor = async (req, res, next) => {
     try{
         const doctors = await User.find({ role : "doctor" });
+        console.log(req.query);
+        
         // console.log('doctors====', doctors);
+        // console.log(doctors);
         return res.render('doctors', {doctors});
     }catch(err){
         console.log('[err]: ', err);

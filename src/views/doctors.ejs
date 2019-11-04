@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TVASTRA</title>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <title>TVASTRA</title>
 
-    <link rel="stylesheet" href="css/index/reset.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="css/index/stylesheet.css" type="text/css" /> -->
-    <link rel="stylesheet" href="css/doctors/doctors.css" type="text/css" />
-    <link rel="stylesheet" href="css/index/nav.css" type="text/css" />
-    <link rel="stylesheet" href="css/index/footer.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- <script src="https://use.fontawesome.com/898e5ca425.js"></script>
+  <link rel="stylesheet" href="css/index/reset.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="css/index/stylesheet.css" type="text/css" /> -->
+  <link rel="stylesheet" href="css/doctors/doctors.css" type="text/css" />
+  <link rel="stylesheet" href="css/index/nav.css" type="text/css" />
+  <link rel="stylesheet" href="css/index/footer.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- <script src="https://use.fontawesome.com/898e5ca425.js"></script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -41,352 +42,339 @@
       href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
     /> -->
-  </head>
+</head>
 
-  <body>
-    <% include ./partials/common/header %>
+<body>
+  <% include ./partials/common/header %>
+  <div class="sort_container">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="filter_container" id="filter">
 
-    <!-- <h1>Doctor section</h1>
-    <div id="doctor-list">
-      <% if(doctors.length){ 
-        for (var i =0; i < doctors.length; i++ ) { %>
-      <br />
-      <% include ./partials/doctors/_doctor_card %> 
-      <% } } %>
-    </div> -->
 
-    <div class="sort_container">
-        <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div class="filter_container" id="filter">
-                    
-
-                </div>
-            <div class="menu">
-                <div class="head_container">
-                    <h3>Location</h3>
-                    <div>
-                        <i class="fa fa-search"></i>
-                        <i class="fa fa-minus" style="color: #afaeae"></i>
-                    </div>
-                </div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="dlf" name="dlf" value="DLF Cyber City"><label for="dlf"> DLF Cyber City</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="dwaraka" name="dwaraka" value="Dwaraka"><label for="dwaraka"> Dwaraka</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="lajpat" name="lapjat" value="Lajpat Nagar"> <label for="lajpat">Lajpat Nagar</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="palam" name="palam" value="Palam Vihar"><label for="palam">Palam Vihar</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="punjabi" name="punjabi" value="Punjabi Baag"><label for="punjabi">Punjabi Baag</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="pusa" name="pusa" value="Pusa Road"><label for="pusa">Pusa Road</label></div>
-                <span style="color: #0099ff; font-weight: 600; margin-top: 0.5rem;">+ Show more</span>
-            </div>
-            <div class="menu">
-                <div class="head_container">
-                    <h3>Treatment</h3>
-                    <div>
-                        <i class="fa fa-search"></i>
-                        <i class="fa fa-minus" style="color: #afaeae"></i>
-                    </div>
-                </div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='multi' name="multi" value="Multi Organ Transplant"><label for="multi">Multi Organ Transplant</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='orthopedic' name="orthopedic" value="Orthopedic Surgery"><label for="orthopedic">Orthopedic Surgery</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='infertility' name="infertility" value="Infertility Treatment"><label for="infertility">Infertility Treatment</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='dentistry' name="dentistry" value="Dentistry"><label for="dentistry">Dentistry</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="cardiology" name="cardiology" value="Cardiology"><label for="cardiology">Cardiology</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='cancer' name="cancer" value="Cancer">Cancer</div>
-                <span style="color: #0099ff; font-weight: 600; margin-top: 0.5rem;">+ Show more</span>
-            </div>
-            <div class="menu">
-                <div class="head_container">
-                    <h3>Hospitals</h3>
-                    <div>
-                        <i class="fa fa-search"></i>
-                        <i class="fa fa-minus" style="color: #afaeae"></i>
-                    </div>
-                </div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="apollo" name="apollo" value="Apollo Hospital"><label for="apollo">Apollo Hospital</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="manipal" name="manipal" value="Manipal North Side Hospital"><label for="manipal">Manipal North Side Hospital</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="northstar" name="northstar" value="Northstar"><label for="northstar">Northstar</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='aiims' name="aiims" value="AIIMs"><label for="aiims">AIIMs</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="fortis" name="fortis" value="Fortis Hospital"><label for="fortis">Fortis Hospital</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="elbit" name="elbit" value="Elbit Diagnostics"><label for="elbit">Elbit Diagnostics</label></div>
-                <span style="color: #0099ff; font-weight: 600; margin-top: 0.5rem;">+ Show more</span>
-            </div>
+      </div>
+      <div class="menu">
+        <div class="head_container">
+          <h3>Location</h3>
+          <div>
+            <i class="fa fa-search"></i>
             <i class="fa fa-minus" style="color: #afaeae"></i>
+          </div>
+        </div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="dlf" name="location"
+            value="DLF Cyber City"><label for="dlf"> DLF Cyber City</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="dwaraka" name="location"
+            value="Dwaraka"><label for="dwaraka"> Dwaraka</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="lajpat" name="location"
+            value="Lajpat Nagar"> <label for="lajpat">Lajpat Nagar</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="palam" name="location"
+            value="Palam Vihar"><label for="palam">Palam Vihar</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="punjabi" name="location"
+            value="Punjabi Baag"><label for="punjabi">Punjabi Baag</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="pusa" name="location"
+            value="Pusa Road"><label for="pusa">Pusa Road</label></div>
+        <span style="color: #0099ff; font-weight: 600; margin-top: 0.5rem;">+ Show more</span>
+      </div>
+      <div class="menu">
+        <div class="head_container">
+          <h3>Treatment</h3>
+          <div>
+            <i class="fa fa-search"></i>
+            <i class="fa fa-minus" style="color: #afaeae"></i>
+          </div>
+        </div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='multi' name="treatment"
+            value="Multi Organ Transplant"><label for="multi">Multi Organ Transplant</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='orthopedic' name="treatment"
+            value="Orthopedic Surgery"><label for="orthopedic">Orthopedic Surgery</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='infertility' name="treatment"
+            value="Infertility Treatment"><label for="infertility">Infertility Treatment</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='dentistry' name="treatment"
+            value="Dentistry"><label for="dentistry">Dentistry</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="cardiology" name="treatment"
+            value="Cardiology"><label for="cardiology">Cardiology</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='cancer' name="treatment"
+            value="Cancer">Cancer</div>
+        <span style="color: #0099ff; font-weight: 600; margin-top: 0.5rem;">+ Show more</span>
+      </div>
+      <div class="menu">
+        <div class="head_container">
+          <h3>Hospitals</h3>
+          <div>
+            <i class="fa fa-search"></i>
+            <i class="fa fa-minus" style="color: #afaeae"></i>
+          </div>
+        </div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="apollo" name="hospital"
+            value="Apollo Hospital"><label for="apollo">Apollo Hospital</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="manipal" name="hospital"
+            value="Manipal North Side Hospital"><label for="manipal">Manipal North Side Hospital</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="northstar" name="hospital"
+            value="Northstar"><label for="northstar">Northstar</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='aiims' name="hospital"
+            value="AIIMs"><label for="aiims">AIIMs</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="fortis" name="hospital"
+            value="Fortis Hospital"><label for="fortis">Fortis Hospital</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="elbit" name="hospital"
+            value="Elbit Diagnostics"><label for="elbit">Elbit Diagnostics</label></div>
+        <span style="color: #0099ff; font-weight: 600; margin-top: 0.5rem;">+ Show more</span>
+      </div>
+      <i class="fa fa-minus" style="color: #afaeae"></i>
 
-            <div class="menu">
-                <div class="head_container">
-                    <h3>Years of Experience</h3>
-                    <div>
-                        <i class="fa fa-search"></i>
-                        <i class="fa fa-minus" style="color: #afaeae"></i>
-                    </div>
-                </div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="30" name="30" value="30+"><label for="30">30+</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="25" name="25" value="25+"><label for="25">25+</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="20" name="20" value="20+"><label for="20">20+</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="15" name="15" value="15+"><label for="15">15+</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="10" name="10" value="10+"><label for="10">10+</label></div>
-                <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="5" name="5" value="5+"><label for="5">5+</label></div>
-            </div>
+      <div class="menu">
+        <div class="head_container">
+          <h3>Years of Experience</h3>
+          <div>
+            <i class="fa fa-search"></i>
+            <i class="fa fa-minus" style="color: #afaeae"></i>
+          </div>
         </div>
-        <span class="sort_button" onclick="openNav()"><div class="button_container"><button>Sort by</button><i class="fa fa-angle-down"></i></div></span>     
-    </div>  
-    <div class="container">
-        <div class="sidenav" id="side_section"></div>
-        <div class="hero_section">
-    <div class="main_container2">
-        <div class="img_container">
-            
-            <div class="content">
-                    <h3>Duke Sanson</h3>
-            <div class="content2">
-                    <div class="logos">
-                            <i class="fa fa-certificate"></i>
-                            Cardiac Surgeon
-                        </div>
-                        <div class="logos">
-                                <img src="./images/certificate.png">
-                                MBBS,MD,FRCP,MRCP,Fellowship
-                        </div>
-                        <div class="logos">
-                                <i class="fa fa-clock-o"></i>
-                                8 Years of Experience
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-hospital-o"></i>
-                            Apollo Hospitals, Delhi
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-map-marker"></i>
-                            New Delhi, India
-                        </div>
-            </div>
-            <button>Book an appointment</button>
-        </div>
-        <img src="images/image--002.jpg">
-            
-            
-        </div>
-        <div class="img_container">
-            
-        <div class="content">
-            <h3>Georgia Peter</h3>
-            <div class="content2">
-                <div class="logos">
-                        <i class="fa fa-certificate"></i>
-                        Breast Cancer Surgeon
-                    </div>
-                    <div class="logos">
-                            <img src="./images/certificate.png">
-                            MBBS,MD,FRCP,MRCP,Fellowship
-                    </div>
-                    <div class="logos">
-                            <i class="fa fa-clock-o"></i>
-                            10 Years of Experience
-                    </div>
-                    <div class="logos">
-                        <i class="fa fa-hospital-o"></i>
-                        Apollo Hospitals, Delhi
-                    </div>
-                    <div class="logos">
-                        <i class="fa fa-map-marker"></i>
-                        New Delhi, India
-                    </div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="30" name="yearofexperience" value="30"><label
+            for="30">30+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="25" name="yearofexperience" value="25"><label
+            for="25">25+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="20" name="yearofexperience" value="20"><label
+            for="20">20+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="15" name="yearofexperience" value="15"><label
+            for="15">15+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="10" name="yearofexperience" value="10"><label
+            for="10">10+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="5" name="yearofexperience" value="5"><label
+            for="5">5+</label></div>
+      </div>
+    </div>
+    <span class="sort_button" onclick="openNav()">
+      <div class="button_container"><button>Sort by</button><i class="fa fa-angle-down"></i></div>
+    </span>
+  </div>
+  <div class="container">
+    <div class="sidenav" id="side_section"></div>
+    <div class="hero_section">
+      <div class="main_container2">
+        <% if(doctors.length){ 
+          for (var i =0; i < doctors.length; i++ ) { %>
+            <div class="img_container">
+              <div class="content">
+                <h3><%= doctors[i].name %></h3>
+                <div class="content2">
+                  <div class="logos">
+                    <i class="fa fa-certificate"></i>
+                    <%= doctors[i].specialisation %>
+                  </div>
+                  <div class="logos">
+                    <img src="./images/certificate.png">
+                    <%= doctors[i].qualification %>
+                  </div>
+                  <div class="logos">
+                    <i class="fa fa-clock-o"></i>
+                    <%= doctors[i].workexperience %> Years of Experience
+                  </div>
+                  <div class="logos">
+                    <i class="fa fa-hospital-o"></i>
+                    <%= doctors[i].hospital %>
+                  </div>
+                  <div class="logos">
+                    <i class="fa fa-map-marker"></i>
+                    <%= doctors[i].location %>
+                  </div>
                 </div>
                 <button>Book an appointment</button>
+              </div>
+              <img src=<%= doctors[i].img ? doctors[i].img : `images/image--00${(doctors[i].workexperience%5)+2}.jpg` %> >
             </div>
-            <img src="images/image--004.jpg">    
-            </div>
-            <div class="img_container">
-                <div class="content">
-                    <h3>Charlie Moon</h3>
-                    <div class="content2">
-                        <div class="logos">
-                            <i class="fa fa-certificate"></i>
-                            Breast Cancer Surgeon
-                        </div>
-                        <div class="logos">
-                                <img src="./images/certificate.png">
-                                MBBS,MD,FRCP,MRCP,Fellowship
-                        </div>
-                        <div class="logos">
-                                <i class="fa fa-clock-o"></i>
-                                10 Years of Experience
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-hospital-o"></i>
-                            Apollo Hospitals, Delhi
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-map-marker"></i>
-                            New Delhi, India
-                        </div>
-                    </div>
-                    <button>Book an appointment</button>
-                </div>
-                <img src="images/image--005.jpg">    
-            </div>
-            <div class="img_container">
-                <div class="content">
-                    <h3>Rose Moon</h3>
-                    <div class="content2">
-                        <div class="logos">
-                            <i class="fa fa-certificate"></i>
-                            Breast Cancer Surgeon
-                        </div>
-                        <div class="logos">
-                                <img src="./images/certificate.png">
-                                MBBS,MD,FRCP,MRCP,Fellowship
-                        </div>
-                        <div class="logos">
-                                <i class="fa fa-clock-o"></i>
-                                10 Years of Experience
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-hospital-o"></i>
-                            Apollo Hospitals, Delhi
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-map-marker"></i>
-                            New Delhi, India
-                        </div>
-                    </div>
-                    <button>Book an appointment</button>
-                </div>
-                <img src="images/image--003.jpg">    
-            </div>
-    </div>
-    <div class="main_container">
+        <% } } %>
+      </div>
+      <div class="main_container">
         <div class="img_container">
-            <img src="images/image--002.jpg">
-            <h3>Duke Sanson</h3>
-            <div class="content">
+          <img src="images/image--002.jpg">
+          <h3>Duke Sanson</h3>
+          <div class="content">
             <div class="logos">
-                <i class="fa fa-certificate"></i>
-                Cardiac Surgeon
+              <i class="fa fa-certificate"></i>
+              Cardiac Surgeon
             </div>
             <div class="logos">
-                    <img src="./images/certificate.png">
-                    MBBS,MD,FRCP,MRCP,Fellowship
+              <img src="./images/certificate.png">
+              MBBS,MD,FRCP,MRCP,Fellowship
             </div>
             <div class="logos">
-                    <i class="fa fa-clock-o"></i>
-                    8 Years of Experience
+              <i class="fa fa-clock-o"></i>
+              8 Years of Experience
             </div>
             <div class="logos">
-                <i class="fa fa-hospital-o"></i>
-                Apollo Hospitals, Delhi
+              <i class="fa fa-hospital-o"></i>
+              Apollo Hospitals, Delhi
             </div>
             <div class="logos">
-                <i class="fa fa-map-marker"></i>
-                New Delhi, India
+              <i class="fa fa-map-marker"></i>
+              New Delhi, India
             </div>
-        </div>
-            <button>Book an appointment</button>
+          </div>
+          <button>Book an appointment</button>
         </div>
         <div class="img_container">
-            <img src="images/image--004.jpg">
-            <h3>Georgia Peter</h3>
-            <div class="content">
+          <img src="images/image--004.jpg">
+          <h3>Georgia Peter</h3>
+          <div class="content">
             <div class="logos">
-                <i class="fa fa-certificate"></i>
-                Breast Cancer Surgeon
-            </div>
-            <div class="logos">
-                    <img src="./images/certificate.png">
-                    MBBS,MD,FRCP,MRCP,Fellowship
+              <i class="fa fa-certificate"></i>
+              Breast Cancer Surgeon
             </div>
             <div class="logos">
-                    <i class="fa fa-clock-o"></i>
-                    10 Years of Experience
+              <img src="./images/certificate.png">
+              MBBS,MD,FRCP,MRCP,Fellowship
             </div>
             <div class="logos">
-                <i class="fa fa-hospital-o"></i>
-                Apollo Hospitals, Delhi
+              <i class="fa fa-clock-o"></i>
+              10 Years of Experience
             </div>
             <div class="logos">
-                <i class="fa fa-map-marker"></i>
-                New Delhi, India
+              <i class="fa fa-hospital-o"></i>
+              Apollo Hospitals, Delhi
             </div>
+            <div class="logos">
+              <i class="fa fa-map-marker"></i>
+              New Delhi, India
             </div>
-            <button>Book an appointment</button>
+          </div>
+          <button>Book an appointment</button>
         </div>
         <div class="img_container">
-            <img src="images/image--005.jpg">
-            <h3>Charlie Moon</h3>
-            <div class="content">
+          <img src="images/image--005.jpg">
+          <h3>Charlie Moon</h3>
+          <div class="content">
             <div class="logos">
-                <i class="fa fa-certificate"></i>
-                Breast Cancer Surgeon
+              <i class="fa fa-certificate"></i>
+              Breast Cancer Surgeon
             </div>
             <div class="logos">
-                    <img src="./images/certificate.png">
-                    MBBS,MD,FRCP,MRCP,Fellowship
+              <img src="./images/certificate.png">
+              MBBS,MD,FRCP,MRCP,Fellowship
             </div>
             <div class="logos">
-                    <i class="fa fa-clock-o"></i>
-                    10 Years of Experience
+              <i class="fa fa-clock-o"></i>
+              10 Years of Experience
             </div>
             <div class="logos">
-                <i class="fa fa-hospital-o"></i>
-                Apollo Hospitals, Delhi
+              <i class="fa fa-hospital-o"></i>
+              Apollo Hospitals, Delhi
             </div>
             <div class="logos">
-                <i class="fa fa-map-marker"></i>
-                New Delhi, India
+              <i class="fa fa-map-marker"></i>
+              New Delhi, India
             </div>
-        </div>
-            <button>Book an appointment</button>
+          </div>
+          <button>Book an appointment</button>
         </div>
         <div class="img_container">
-            <img src="images/image--003.jpg">
-            <h3>Rose Moon</h3>
-            <div class="content">
+          <img src="images/image--003.jpg">
+          <h3>Rose Moon</h3>
+          <div class="content">
             <div class="logos">
-                <i class="fa fa-certificate"></i>
-                Breast Cancer Surgeon
+              <i class="fa fa-certificate"></i>
+              Breast Cancer Surgeon
             </div>
             <div class="logos">
-                    <img src="./images/certificate.png">
-                    MBBS,MD,FRCP,MRCP,Fellowship
+              <img src="./images/certificate.png">
+              MBBS,MD,FRCP,MRCP,Fellowship
             </div>
             <div class="logos">
-                    <i class="fa fa-clock-o"></i>
-                    10 Years of Experience
+              <i class="fa fa-clock-o"></i>
+              10 Years of Experience
             </div>
             <div class="logos">
-                <i class="fa fa-hospital-o"></i>
-                Apollo Hospitals, Delhi
+              <i class="fa fa-hospital-o"></i>
+              Apollo Hospitals, Delhi
             </div>
             <div class="logos">
-                <i class="fa fa-map-marker"></i>
-                New Delhi, India
+              <i class="fa fa-map-marker"></i>
+              New Delhi, India
             </div>
+          </div>
+          <button>Book an appointment</button>
         </div>
-            <button>Book an appointment</button>
-        </div>
-    </div> 
-    <% include ./partials/common/footer %>
-  </body>
-  <script>
-    
-    function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("mySidenav").style.border = "1px solid #cccccc";
-        }
+      </div>
+      <% include ./partials/common/footer %>
+</body>
+<script>
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("mySidenav").style.border = "none";
+  let url = window.location.href;
+  url = url.split('%20').join(' ');
+  const checkboxes = document.getElementsByClassName('checkbox_container');
+  // console.log(checkboxes);
+  
+  console.log(url);
+  [...checkboxes].forEach(checkbox => {
+    if(url.indexOf(checkbox.firstChild.getAttribute('value')) > -1) {
+      checkbox.firstChild.checked = true;
+      document.getElementById("filter").innerHTML += 
+      `<div class='filter_button'>
+        <p>${checkbox.firstChild.getAttribute('value')}</p>
+        <button 
+          name='${checkbox.firstChild.getAttribute('name')}'
+          value='${checkbox.firstChild.getAttribute('value')}' 
+          onclick='remove(this)'
+        >
+          <i class='fa fa-close'></i>
+        </button>
+      </div>`;
+    }
+  });
+
+  
+
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.border = "1px solid #cccccc";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav").style.border = "none";
+  }
+  function add(some) {
+    let newUrl = window.location.href;
+    console.log(some.checked);
+    if(some.checked) {
+      //add query
+      if(newUrl.indexOf('?') == -1) {
+        newUrl += `?${some.getAttribute('name')}=${some.getAttribute('value')}`;
+      }
+      else {
+        newUrl += `&${some.getAttribute('name')}=${some.getAttribute('value')}`
+      }
+    }
+    else { 
+      //remove query
+      newUrl = newUrl.split('%20').join(' ');
+      const query = `${some.getAttribute('name')}=${some.getAttribute('value')}`;
+      const inx = newUrl.indexOf(query);
+      if(newUrl.indexOf(`${some.getAttribute('name')}=${some.getAttribute('value')}`) > -1) {
+        if(newUrl[inx-1] === '&') {
+          newUrl = newUrl.replace('&'+query, '');
         }
-        function add(some){
-            if(document.getElementById(some.id).checked==true){
-                document.getElementById("filter").innerHTML += "<div class='filter_button' id="+some.id+"1><p>"+some.value+"</p><button><i class='fa fa-close'></i></button></div>";
-            }
-            else{
-                var elem = document.getElementById(some.id+"1")
-                elem.parentNode.removeChild(elem);
-            }
-            
+        else {
+          newUrl = newUrl.replace(query, '');
         }
-  </script>
+      }
+    }
+    window.location.href = newUrl; //this line will redirect to new location
+  }
+  function remove(ele) {
+    let newUrl = window.location.href;
+    newUrl = newUrl.split('%20').join(' ');
+    const query = `${ele.getAttribute('name')}=${ele.getAttribute('value')}`;
+    const inx = newUrl.indexOf(query);
+    if(newUrl.indexOf(`${ele.getAttribute('name')}=${ele.getAttribute('value')}`) > -1) {
+      if(newUrl[inx-1] === '&') {
+        newUrl = newUrl.replace('&'+query, '');
+      }
+      else {
+        newUrl = newUrl.replace(query, '');
+      }
+      window.location.href = newUrl; //this line will redirect to new location
+    }
+  }
+</script>
+
 </html>

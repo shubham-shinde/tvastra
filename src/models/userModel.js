@@ -5,14 +5,14 @@ var userSchema = new mongoose.Schema({
     email : {type : String, required : true},
     password : {type : String, required : true},
     role : {type : String, required : true},
-
     specialisation : {type : String , trim : true },
     listoftreatment : {type : String , trim : true },
     workexperience : {type : String , trim : true },
     qualification : {type : String , trim : true },
     awards : {type : String , trim : true },
     location : {type : String , trim : true },
-    avgfees : {type : String , trim : true }
+    avgfees : {type : String , trim : true },
+    hospital : {type : String, trim : true }
 });
 
 var User = mongoose.model('User', userSchema);
