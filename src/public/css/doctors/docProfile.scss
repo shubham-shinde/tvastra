@@ -1,0 +1,86 @@
+.directory{
+padding: 2rem 5rem;
+color:grey;
+font-size: 1.2rem;
+}
+.profile-card{
+    margin: 0rem 5rem;
+    margin-bottom: 3rem;
+    border:1px solid lightgrey;
+    display: flex;
+    .profile-desc{
+        padding:1rem;
+
+        h2{
+            font-size: 1.6rem;
+            font-weight: 540;
+            color:rgb(19, 88, 192);
+        }
+        .about{
+            margin-top: 1rem;
+            font-size: .9rem;
+            line-height: 1.4;
+        }
+        .accordian{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-content: space-between;
+            // border-top:1px solid lightgray;
+            border-bottom:1px dashed lightgray;
+            padding:1.3rem 0;
+            transition: .4s;
+            .acc-head{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            .left{
+                display: flex;
+                // height: 2rem;
+                align-items: center;
+                width: fit-content;
+                justify-content: space-between;
+                
+                .image-container{
+                    width: 2rem;
+                    height: 2rem;
+                    img{
+                    width: 100%;
+                    height: 100%;
+                    }
+                }
+                p{
+                    font-size: 1.1rem;
+                    margin-left: 1.5rem;
+                }
+            }
+        }
+            
+            
+        }
+        .accordian-active{
+            margin-top: .5rem;
+            display: none;
+        }
+    }
+    .profile-picture{
+        padding: .8rem;
+        .image-container{
+            width:16rem;
+            border:1px solid grey;
+            img{
+                width: 100%;
+            }
+        }
+        button{
+            width: 100%;
+            margin-top:.5rem;
+            padding:.7rem;
+            color:#ddd;
+            font-weight: 600;
+            letter-spacing: .5px;
+            background-color: rgb(8, 7, 58);
+        }
+        
+    }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TVASTRA</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/index/reset.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="css/index/stylesheet.css" type="text/css" /> -->
+    <link rel="stylesheet" href="css/doctors/docProfile.css" type="text/css" />
+    <link rel="stylesheet" href="css/index/nav.css" type="text/css" />
+    <link rel="stylesheet" href="css/index/footer.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- <script src="https://use.fontawesome.com/898e5ca425.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Archivo"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Serif"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    /> -->
+</head>
+
+<body>
+    <% include ./partials/common/header %>
+    <h3 class="directory">Home / Doctor List</h3>
+
+    <div class="profile-card">
+        <div class="profile-desc">
+            <h2>John Nission</h2>
+            <p class="about">Dr. Mission earned a medical degree from University of California San Francisco. He
+                completed residency in Obstetrics and Gynecology at OHSU. He later completed a fellowship in
+                Maternal-Fetal Medicine at Magee-Womens Hospital of UPMC in Pittsburgh, PA. Dr. Mission respects his
+                patient’s individual needs and is highly regarded by his patients. He models healthy living and outside
+                of work enjoys crossfit. He also enjoys cooking and baking.</p>
+            <div class="accordian">
+                <div class="acc-head">
+                    <div class="left">
+                        <div class="image-container"><img src="./images/certificate.png"></div>
+                        <p>Specialization</p>
+                    </div>
+                    <i class="fa fa-clock-o"></i>
+                </div>
+
+                <p class="accordian-active">Legacy Emanuel Medical Center, Legacy Salmon Creek Medical Center, Legacy
+                    Silverton Medical Center</p>
+            </div>
+
+            <div class="accordian">
+                    <div class="acc-head">
+                        <div class="left">
+                            <div class="image-container"><img src="./images/certificate.png"></div>
+                            <p>List of Treatments</p>
+                        </div>
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+    
+                    <p class="accordian-active">Legacy Emanuel Medical Center, Legacy Salmon Creek Medical Center, Legacy
+                        Silverton Medical Center</p>
+                </div>
+                <div class="accordian">
+                        <div class="acc-head">
+                            <div class="left">
+                                <div class="image-container"><img src="./images/certificate.png"></div>
+                                <p>Qualification</p>
+                            </div>
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+        
+                        <p class="accordian-active">Legacy Emanuel Medical Center, Legacy Salmon Creek Medical Center, Legacy
+                            Silverton Medical Center</p>
+                    </div>
+                    <div class="accordian">
+                            <div class="acc-head">
+                                <div class="left">
+                                    <div class="image-container"><img src="./images/certificate.png"></div>
+                                    <p>Work Experience</p>
+                                </div>
+                                <i class="fa fa-clock-o"></i>
+                            </div>
+            
+                            <p class="accordian-active">Legacy Emanuel Medical Center, Legacy Salmon Creek Medical Center, Legacy
+                                Silverton Medical Center</p>
+                        </div>
+                
+
+        </div>
+        <div class="profile-picture">
+            <div class="image-container"><img src="./images/abc.png" alt="profile picture"></div>
+            <button>Book an Appointment</button>
+        </div>
+    </div>
+
+
+    <% include ./partials/common/footer %>
+</body>
+<script>
+
+    // function openNav() {
+    //         document.getElementById("mySidenav").style.width = "250px";
+    //         document.getElementById("mySidenav").style.border = "1px solid #cccccc";
+    //     }
+
+    //     function closeNav() {
+    //         document.getElementById("mySidenav").style.width = "0";
+    //         document.getElementById("mySidenav").style.border = "none";
+    //     }
+    //     function add(some){
+    //         if(document.getElementById(some.id).checked==true){
+    //             document.getElementById("filter").innerHTML += "<div class='filter_button' id="+some.id+"1><p>"+some.value+"</p><button><i class='fa fa-close'></i></button></div>";
+    //         }
+    //         else{
+    //             var elem = document.getElementById(some.id+"1")
+    //             elem.parentNode.removeChild(elem);
+    //         }
+
+    //     }
+    var acc = document.getElementsByClassName("accordian");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.lastElementChild;
+            console.log(this.lastElementChild);
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</html>
