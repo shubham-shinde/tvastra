@@ -54,9 +54,14 @@
       <% include ./partials/doctors/_doctor_card %> 
       <% } } %>
     </div> -->
-
+    <div class="hero-section">
+        <h2>Doctors in <span class="city">Delhi</span></h2>
+    </div>
+    <div class="sort_button" onclick="openNav()"><h3>Home / Doctor List</h3><div class="button_container"><button>Sort by</button><i class="fa fa-angle-down"></i></div></div>
     <div class="sort_container">
+        
         <div id="mySidenav" class="sidenav">
+            <div class="filter_head">Filter by</div>
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="filter_container" id="filter">
                     
@@ -110,7 +115,7 @@
                 <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="elbit" name="elbit" value="Elbit Diagnostics"><label for="elbit">Elbit Diagnostics</label></div>
                 <span style="color: #0099ff; font-weight: 600; margin-top: 0.5rem;">+ Show more</span>
             </div>
-            <i class="fa fa-minus" style="color: #afaeae"></i>
+            <!-- <i class="fa fa-minus" style="color: #afaeae"></i> -->
 
             <div class="menu">
                 <div class="head_container">
@@ -128,133 +133,134 @@
                 <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="5" name="5" value="5+"><label for="5">5+</label></div>
             </div>
         </div>
-        <span class="sort_button" onclick="openNav()"><div class="button_container"><button>Sort by</button><i class="fa fa-angle-down"></i></div></span>     
+        <div class="main_container2">
+                <div class="img_container">
+                    
+                    <div class="content">
+                            <h3>Duke Sanson</h3>
+                    <div class="content2">
+                            <div class="logos">
+                                    <i class="fa fa-certificate"></i>
+                                    Cardiac Surgeon
+                                </div>
+                                <div class="logos">
+                                        <img src="./images/certificate.png">
+                                        MBBS,MD,FRCP,MRCP,Fellowship
+                                </div>
+                                <div class="logos">
+                                        <i class="fa fa-clock-o"></i>
+                                        8 Years of Experience
+                                </div>
+                                <div class="logos">
+                                    <i class="fa fa-hospital-o"></i>
+                                    Apollo Hospitals, Delhi
+                                </div>
+                                <div class="logos">
+                                    <i class="fa fa-map-marker"></i>
+                                    New Delhi, India
+                                </div>
+                    </div>
+                    <button>Book an appointment</button>
+                </div>
+                <img src="images/image--002.jpg">
+                    
+                    
+                </div>
+                <div class="img_container">
+                    
+                <div class="content">
+                    <h3>Georgia Peter</h3>
+                    <div class="content2">
+                        <div class="logos">
+                                <i class="fa fa-certificate"></i>
+                                Breast Cancer Surgeon
+                            </div>
+                            <div class="logos">
+                                    <img src="./images/certificate.png">
+                                    MBBS,MD,FRCP,MRCP,Fellowship
+                            </div>
+                            <div class="logos">
+                                    <i class="fa fa-clock-o"></i>
+                                    10 Years of Experience
+                            </div>
+                            <div class="logos">
+                                <i class="fa fa-hospital-o"></i>
+                                Apollo Hospitals, Delhi
+                            </div>
+                            <div class="logos">
+                                <i class="fa fa-map-marker"></i>
+                                New Delhi, India
+                            </div>
+                        </div>
+                        <button>Book an appointment</button>
+                    </div>
+                    <img src="images/image--004.jpg">    
+                    </div>
+                    <div class="img_container">
+                        <div class="content">
+                            <h3>Charlie Moon</h3>
+                            <div class="content2">
+                                <div class="logos">
+                                    <i class="fa fa-certificate"></i>
+                                    Breast Cancer Surgeon
+                                </div>
+                                <div class="logos">
+                                        <img src="./images/certificate.png">
+                                        MBBS,MD,FRCP,MRCP,Fellowship
+                                </div>
+                                <div class="logos">
+                                        <i class="fa fa-clock-o"></i>
+                                        10 Years of Experience
+                                </div>
+                                <div class="logos">
+                                    <i class="fa fa-hospital-o"></i>
+                                    Apollo Hospitals, Delhi
+                                </div>
+                                <div class="logos">
+                                    <i class="fa fa-map-marker"></i>
+                                    New Delhi, India
+                                </div>
+                            </div>
+                            <button>Book an appointment</button>
+                        </div>
+                        <img src="images/image--005.jpg">    
+                    </div>
+                    <div class="img_container">
+                        <div class="content">
+                            <h3>Rose Moon</h3>
+                            <div class="content2">
+                                <div class="logos">
+                                    <i class="fa fa-certificate"></i>
+                                    Breast Cancer Surgeon
+                                </div>
+                                <div class="logos">
+                                        <img src="./images/certificate.png">
+                                        MBBS,MD,FRCP,MRCP,Fellowship
+                                </div>
+                                <div class="logos">
+                                        <i class="fa fa-clock-o"></i>
+                                        10 Years of Experience
+                                </div>
+                                <div class="logos">
+                                    <i class="fa fa-hospital-o"></i>
+                                    Apollo Hospitals, Delhi
+                                </div>
+                                <div class="logos">
+                                    <i class="fa fa-map-marker"></i>
+                                    New Delhi, India
+                                </div>
+                            </div>
+                            <button>Book an appointment</button>
+                        </div>
+                        <img src="images/image--003.jpg">    
+                    </div>
+            </div>
+            
     </div>  
-    <div class="container">
+    <!-- <div class="container">
         <div class="sidenav" id="side_section"></div>
         <div class="hero_section">
-    <div class="main_container2">
-        <div class="img_container">
-            
-            <div class="content">
-                    <h3>Duke Sanson</h3>
-            <div class="content2">
-                    <div class="logos">
-                            <i class="fa fa-certificate"></i>
-                            Cardiac Surgeon
-                        </div>
-                        <div class="logos">
-                                <img src="./images/certificate.png">
-                                MBBS,MD,FRCP,MRCP,Fellowship
-                        </div>
-                        <div class="logos">
-                                <i class="fa fa-clock-o"></i>
-                                8 Years of Experience
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-hospital-o"></i>
-                            Apollo Hospitals, Delhi
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-map-marker"></i>
-                            New Delhi, India
-                        </div>
-            </div>
-            <button>Book an appointment</button>
-        </div>
-        <img src="images/image--002.jpg">
-            
-            
-        </div>
-        <div class="img_container">
-            
-        <div class="content">
-            <h3>Georgia Peter</h3>
-            <div class="content2">
-                <div class="logos">
-                        <i class="fa fa-certificate"></i>
-                        Breast Cancer Surgeon
-                    </div>
-                    <div class="logos">
-                            <img src="./images/certificate.png">
-                            MBBS,MD,FRCP,MRCP,Fellowship
-                    </div>
-                    <div class="logos">
-                            <i class="fa fa-clock-o"></i>
-                            10 Years of Experience
-                    </div>
-                    <div class="logos">
-                        <i class="fa fa-hospital-o"></i>
-                        Apollo Hospitals, Delhi
-                    </div>
-                    <div class="logos">
-                        <i class="fa fa-map-marker"></i>
-                        New Delhi, India
-                    </div>
-                </div>
-                <button>Book an appointment</button>
-            </div>
-            <img src="images/image--004.jpg">    
-            </div>
-            <div class="img_container">
-                <div class="content">
-                    <h3>Charlie Moon</h3>
-                    <div class="content2">
-                        <div class="logos">
-                            <i class="fa fa-certificate"></i>
-                            Breast Cancer Surgeon
-                        </div>
-                        <div class="logos">
-                                <img src="./images/certificate.png">
-                                MBBS,MD,FRCP,MRCP,Fellowship
-                        </div>
-                        <div class="logos">
-                                <i class="fa fa-clock-o"></i>
-                                10 Years of Experience
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-hospital-o"></i>
-                            Apollo Hospitals, Delhi
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-map-marker"></i>
-                            New Delhi, India
-                        </div>
-                    </div>
-                    <button>Book an appointment</button>
-                </div>
-                <img src="images/image--005.jpg">    
-            </div>
-            <div class="img_container">
-                <div class="content">
-                    <h3>Rose Moon</h3>
-                    <div class="content2">
-                        <div class="logos">
-                            <i class="fa fa-certificate"></i>
-                            Breast Cancer Surgeon
-                        </div>
-                        <div class="logos">
-                                <img src="./images/certificate.png">
-                                MBBS,MD,FRCP,MRCP,Fellowship
-                        </div>
-                        <div class="logos">
-                                <i class="fa fa-clock-o"></i>
-                                10 Years of Experience
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-hospital-o"></i>
-                            Apollo Hospitals, Delhi
-                        </div>
-                        <div class="logos">
-                            <i class="fa fa-map-marker"></i>
-                            New Delhi, India
-                        </div>
-                    </div>
-                    <button>Book an appointment</button>
-                </div>
-                <img src="images/image--003.jpg">    
-            </div>
-    </div>
+    
     <div class="main_container">
         <div class="img_container">
             <img src="images/image--002.jpg">
@@ -364,7 +370,7 @@
         </div>
             <button>Book an appointment</button>
         </div>
-    </div> 
+    </div>  -->
     <% include ./partials/common/footer %>
   </body>
   <script>
