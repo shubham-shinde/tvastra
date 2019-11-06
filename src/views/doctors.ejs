@@ -46,6 +46,13 @@
 
 <body>
   <% include ./partials/common/header %>
+  <div class="sort_button" onclick="openNav()">
+    <h3>Home / Doctor List</h3>
+    <div class="button_container"><button>Sort by</button><i class="fa fa-angle-down"></i></div>
+  </div>
+   <!-- <span class="sort_button" onclick="openNav()">
+  <div class="button_container"><button>Sort by</button><i class="fa fa-angle-down"></i></div>
+  </span> -->
   <div class="sort_container">
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -129,61 +136,60 @@
             <i class="fa fa-minus" style="color: #afaeae"></i>
           </div>
         </div>
-        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="30" name="workexperience" value="30"><label
-            for="30">30+</label></div>
-        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="25" name="workexperience" value="25"><label
-            for="25">25+</label></div>
-        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="20" name="workexperience" value="20"><label
-            for="20">20+</label></div>
-        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="15" name="workexperience" value="15"><label
-            for="15">15+</label></div>
-        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="10" name="workexperience" value="10"><label
-            for="10">10+</label></div>
-        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="5" name="workexperience" value="5"><label
-            for="5">5+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="30" name="workexperience"
+            value="30"><label for="30">30+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="25" name="workexperience"
+            value="25"><label for="25">25+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="20" name="workexperience"
+            value="20"><label for="20">20+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="15" name="workexperience"
+            value="15"><label for="15">15+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="10" name="workexperience"
+            value="10"><label for="10">10+</label></div>
+        <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="5" name="workexperience"
+            value="5"><label for="5">5+</label></div>
       </div>
     </div>
-    <span class="sort_button" onclick="openNav()">
-      <div class="button_container"><button>Sort by</button><i class="fa fa-angle-down"></i></div>
-    </span>
+
+    <div class="main_container2">
+      <% if(doctors.length){ 
+        for (var i =0; i < doctors.length; i++ ) { %>
+      <div class="img_container">
+        <div class="content">
+          <h3><%= doctors[i].name %></h3>
+          <div class="content2">
+            <div class="logos">
+              <i class="fa fa-certificate"></i>
+              <%= doctors[i].specialisation %>
+            </div>
+            <div class="logos">
+              <img src="./images/certificate.png">
+              <%= doctors[i].qualification %>
+            </div>
+            <div class="logos">
+              <i class="fa fa-clock-o"></i>
+              <%= doctors[i].workexperience %> Years of Experience
+            </div>
+            <div class="logos">
+              <i class="fa fa-hospital-o"></i>
+              <%= doctors[i].hospital %>
+            </div>
+            <div class="logos">
+              <i class="fa fa-map-marker"></i>
+              <%= doctors[i].location %>
+            </div>
+          </div>
+          <button>Book an appointment</button>
+        </div>
+        <img src=<%= doctors[i].img ? doctors[i].img : `images/image--00${(doctors[i].workexperience%5)+2}.jpg` %>>
+      </div>
+      <% } } %>
+    </div>
   </div>
-  <div class="container">
+  <!-- <div class="container">
     <div class="sidenav" id="side_section"></div>
     <div class="hero_section">
-      <div class="main_container2">
-        <% if(doctors.length){ 
-          for (var i =0; i < doctors.length; i++ ) { %>
-            <div class="img_container">
-              <div class="content">
-                <h3><%= doctors[i].name %></h3>
-                <div class="content2">
-                  <div class="logos">
-                    <i class="fa fa-certificate"></i>
-                    <%= doctors[i].specialisation %>
-                  </div>
-                  <div class="logos">
-                    <img src="./images/certificate.png">
-                    <%= doctors[i].qualification %>
-                  </div>
-                  <div class="logos">
-                    <i class="fa fa-clock-o"></i>
-                    <%= doctors[i].workexperience %> Years of Experience
-                  </div>
-                  <div class="logos">
-                    <i class="fa fa-hospital-o"></i>
-                    <%= doctors[i].hospital %>
-                  </div>
-                  <div class="logos">
-                    <i class="fa fa-map-marker"></i>
-                    <%= doctors[i].location %>
-                  </div>
-                </div>
-                <button>Book an appointment</button>
-              </div>
-              <img src=<%= doctors[i].img ? doctors[i].img : `images/image--00${(doctors[i].workexperience%5)+2}.jpg` %> >
-            </div>
-        <% } } %>
-      </div>
+      
       <div class="main_container">
         <div class="img_container">
           <img src="images/image--002.jpg">
@@ -293,7 +299,7 @@
           </div>
           <button>Book an appointment</button>
         </div>
-      </div>
+      </div> -->
       <% include ./partials/common/footer %>
 </body>
 <script>
@@ -302,13 +308,13 @@
   url = url.split('%20').join(' ');
   const checkboxes = document.getElementsByClassName('checkbox_container');
   // console.log(checkboxes);
-  
+
   console.log(url);
   [...checkboxes].forEach(checkbox => {
-    if(url.indexOf(checkbox.firstChild.getAttribute('value')) > -1) {
+    if (url.indexOf(checkbox.firstChild.getAttribute('value')) > -1) {
       checkbox.firstChild.checked = true;
-      document.getElementById("filter").innerHTML += 
-      `<div class='filter_button'>
+      document.getElementById("filter").innerHTML +=
+        `<div class='filter_button'>
         <p>${checkbox.firstChild.getAttribute('value')}</p>
         <button 
           name='${checkbox.firstChild.getAttribute('name')}'
@@ -321,7 +327,7 @@
     }
   });
 
-  
+
 
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -335,23 +341,23 @@
   function add(some) {
     let newUrl = window.location.href;
     console.log(some.checked);
-    if(some.checked) {
+    if (some.checked) {
       //add query
-      if(newUrl.indexOf('?') == -1) {
+      if (newUrl.indexOf('?') == -1) {
         newUrl += `?${some.getAttribute('name')}=${some.getAttribute('value')}`;
       }
       else {
         newUrl += `&${some.getAttribute('name')}=${some.getAttribute('value')}`
       }
     }
-    else { 
+    else {
       //remove query
       newUrl = newUrl.split('%20').join(' ');
       const query = `${some.getAttribute('name')}=${some.getAttribute('value')}`;
       const inx = newUrl.indexOf(query);
-      if(newUrl.indexOf(`${some.getAttribute('name')}=${some.getAttribute('value')}`) > -1) {
-        if(newUrl[inx-1] === '&') {
-          newUrl = newUrl.replace('&'+query, '');
+      if (newUrl.indexOf(`${some.getAttribute('name')}=${some.getAttribute('value')}`) > -1) {
+        if (newUrl[inx - 1] === '&') {
+          newUrl = newUrl.replace('&' + query, '');
         }
         else {
           newUrl = newUrl.replace(query, '');
@@ -365,9 +371,9 @@
     newUrl = newUrl.split('%20').join(' ');
     const query = `${ele.getAttribute('name')}=${ele.getAttribute('value')}`;
     const inx = newUrl.indexOf(query);
-    if(newUrl.indexOf(`${ele.getAttribute('name')}=${ele.getAttribute('value')}`) > -1) {
-      if(newUrl[inx-1] === '&') {
-        newUrl = newUrl.replace('&'+query, '');
+    if (newUrl.indexOf(`${ele.getAttribute('name')}=${ele.getAttribute('value')}`) > -1) {
+      if (newUrl[inx - 1] === '&') {
+        newUrl = newUrl.replace('&' + query, '');
       }
       else {
         newUrl = newUrl.replace(query, '');
