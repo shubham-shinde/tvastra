@@ -3,16 +3,16 @@ import User from '../models/userModel';
 
 export const addDoctor = async (req, res, next) => {
     const {name, email, password, role, specialisation, listoftreatment, 
-        workexperience, qualification, awards, location, avgfees} = req.body;
+        workexperience, qualification, awards, location, avgfees, hospital} = req.body;
 
     if(!name || !email || !password || !role || !specialisation || !listoftreatment || 
-    !workexperience || !qualification || !awards || !location || !avgfees ){
+    !workexperience || !qualification || !awards || !location || !avgfees || !hospital ){
         res.redirect('/admin')
         res.end();
     }
     const _user = {
         name, email, password, role, specialisation, listoftreatment, 
-        workexperience, qualification, awards, location, avgfees
+        workexperience, qualification, awards, location, avgfees, hospital
     }
     try{
         const new_user = await userModelServices.add(_user);
@@ -26,8 +26,16 @@ export const addDoctor = async (req, res, next) => {
 
 export const getDoctor = async (req, res, next) => {
     try{
-        const doctors = await User.find({ role : "doctor" });
+        let workexperience = req.query.workexperience;
+        if(workexperience && workexperience instanceof Array) {
+            workexperience = workexperience.map(e => Number(e));
+            workexperience = Math.min(...workexperience);
+        }
+        console.log({ role : "doctor", ...req.query, workexperience: { $gte : workexperience || 0 }});
+        
+        const doctors = await User.find({ role : "doctor", ...req.query, workexperience: { $gte : workexperience || 0 }});       
         // console.log('doctors====', doctors);
+        // console.log(doctors);
         return res.render('doctors', {doctors});
     }catch(err){
         console.log('[err]: ', err);
