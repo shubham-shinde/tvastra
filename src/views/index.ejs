@@ -53,10 +53,11 @@
             Join the thousands of others who have exercised their right to quality healthcare at a price you can afford.
         </p>
         <div class="input1">
-            <div class="input_container">
+            <div id='location_input' class="input_container">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <input type="text" placeholder="Ahmedabad">
+                <input type="text" id='location' onkeyup="makeList()"  placeholder="Ahmedabad">
                 <img src="images/gps.png">
+                
             </div>
             <div class="input_container2">
                 <input type="text" placeholder="Search for doctors,hospitals and treatment">
@@ -304,6 +305,76 @@
               }
           }
       }        
+
+
+function makeList() {
+    // Establish the array which acts as a data source for the list
+    let listData = [
+        'Blue',
+        'Red',
+        'White',
+        'Green',
+        'Black',
+        'Orange'
+    ]
+    // Make a container element for the list
+    let listContainer = document.createElement('div');
+    listContainer.classList.add('list');
+    
+    // Make the list
+    let listElement = document.createElement('ul')
+    // Set up a loop that goes through the items in listItems one at a time
+    let numberOfListItems = listData.length
+    let listItem;
+    let i;
+
+    // Add it to the page
+    document.getElementById('location_input').appendChild(listContainer);
+    listContainer.appendChild(listElement);
+
+    for (i = 0; i < numberOfListItems; ++i) {
+        // create an item for each one
+        listItem = document.createElement('li');
+        listItem.classList.add('locations');
+
+        // Add the item text
+        listItem.innerHTML = listData[i];
+
+        // Add listItem to the listElement
+        listElement.appendChild(listItem);
+    }
+    let input = document.getElementById('location').value 
+    input=input.toLowerCase(); 
+    let x = document.getElementsByClassName('locations'); 
+      
+    for (i = 0; i < x.length; i++) {  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+            x[i].style.display="none"; 
+        } 
+        else { 
+            x[i].style.display="block";                  
+        } 
+    } 
+}
+
+let location_input = document.getElementById('location');
+
+location_input.addEventListener('focusin', (event) => {
+  event.target.style.background = '';    
+});
+
+location_input.addEventListener('focusout', (event) => {
+    console.log('random');
+//   document.getElementsByClassName('list').style.display = 'none';
+  var elems = document.getElementsByClassName('locations');
+for (var i=0;i<elems.length;i+=1){
+  elems[i].style.display = 'none';
+}
+
+location_input.value='';
+
+});
+
   </script>
   
 </html>
