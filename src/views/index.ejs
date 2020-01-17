@@ -55,7 +55,7 @@
         <div class="input1">
             <div id='location_input' class="input_container">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <input type="text" id='location' onkeyup="makeList()"  placeholder="Ahmedabad">
+                <input type="text" id='location' onkeyup="makeList()"  placeholder="Search for location" value='New Delhi'>
                 <img src="images/gps.png">
                 
             </div>
@@ -310,12 +310,12 @@
 function makeList() {
     // Establish the array which acts as a data source for the list
     let listData = [
-        'Blue',
-        'Red',
-        'White',
-        'Green',
-        'Black',
-        'Orange'
+        'Banglore',
+        'Chennai',
+        'New Delhi',
+        'Delhi',
+        'Mumbai',
+        'Kolkata'
     ]
     // Make a container element for the list
     let listContainer = document.createElement('div');
