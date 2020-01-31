@@ -4,6 +4,7 @@ import identifyUser from '../middlewares/identifyUser';
 import path from 'path';
 import { rootPath } from '../common/rootPath';
 import * as userController from '../controllers/userController';
+import * as hospitalController from '../controllers/hospitalController';
 
 const router = express.Router();
 
@@ -16,6 +17,11 @@ router.get('/doctor',  (req, res, next) => res.render( "docProfile" ) );
 
 router.get('/admin',  (req, res, next) => res.render( "admin" ) );
 router.post('/admin/doctor', userController.addDoctor );
+
+router.get('/adminHospital',  (req, res, next) => res.render( "hospitalAdmin" ) );
+router.post('/adminHospital/hospital', hospitalController.addHospital );
+
+
     
 module.exports = router;
 

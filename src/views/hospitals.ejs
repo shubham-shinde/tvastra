@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/index/reset.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="css/index/stylesheet.css" type="text/css" /> -->
+    <link rel="stylesheet" href="css/doctors/doctors.css" type="text/css" />
     <link rel="stylesheet" href="css/index/nav.css" type="text/css" />
     <link rel="stylesheet" href="css/index/footer.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -154,36 +154,21 @@
       </div>
   
       <div class="main_container2">
-        <% if(doctors.length){ 
-          for (var i =0; i < doctors.length; i++ ) { %>
+        <% if(hospitals.length){ 
+          for (var i =0; i < hospitals.length; i++ ) { %>
         <div class="img_container">
           <div class="content">
-            <h3><%= doctors[i].name %></h3>
+            <h3><%= hospitals[i].name %></h3>
             <div class="content2">
-              <div class="logos">
-                <i class="fa fa-certificate"></i>
-                <%= doctors[i].specialisation %>
-              </div>
-              <div class="logos">
-                <img src="./images/certificate.png">
-                <%= doctors[i].qualification %>
-              </div>
-              <div class="logos">
-                <i class="fa fa-clock-o"></i>
-                <%= doctors[i].workexperience %> Years of Experience
-              </div>
-              <div class="logos">
-                <i class="fa fa-hospital-o"></i>
-                <%= doctors[i].hospital %>
-              </div>
+              
               <div class="logos">
                 <i class="fa fa-map-marker"></i>
-                <%= doctors[i].location %>
+                <%= hospitals[i].location %>
               </div>
             </div>
             <button>Book an appointment</button>
           </div>
-          <!-- <img src=<%= doctors[i].img ? doctors[i].img : `images/image--00${(doctors[i].workexperience%5)+2}.jpg` %>> -->
+          <img src=<%= hospitals[i].img ? hospitals[i].img : `images/image--00${(hospitals[i].workexperience%5)+2}.jpg` %>>
         </div>
         <% } } %>
       </div>
@@ -192,89 +177,89 @@
     <% include ./partials/common/footer %>
 
 
+    <script>
+
+      let url = window.location.search;
+      console.log(url);
+      url = url.split('%20').join(' ');
+      const checkboxes = document.getElementsByClassName('checkbox_container');
+      // console.log(checkboxes);
     
-
-  </body>
-
-  <script>
-
-    let url = window.location.search;
-    console.log(url);
-    url = url.split('%20').join(' ');
-    const checkboxes = document.getElementsByClassName('checkbox_container');
-    // console.log(checkboxes);
-  
-    console.log(url);
-    [...checkboxes].forEach(checkbox => {
-      if (url.indexOf(checkbox.firstChild.getAttribute('value')) > -1) {
-        checkbox.firstChild.checked = true;
-        document.getElementById("filter").innerHTML +=
-          `<div class='filter_button'>
-          <p>${checkbox.firstChild.getAttribute('value')}</p>
-          <button 
-            name='${checkbox.firstChild.getAttribute('name')}'
-            value='${checkbox.firstChild.getAttribute('value')}' 
-            onclick='remove(this)'
-          >
-            <i class='fa fa-close'></i>
-          </button>
-        </div>`;
+      console.log(url);
+      [...checkboxes].forEach(checkbox => {
+        if (url.indexOf(checkbox.firstChild.getAttribute('value')) > -1) {
+          checkbox.firstChild.checked = true;
+          document.getElementById("filter").innerHTML +=
+            `<div class='filter_button'>
+            <p>${checkbox.firstChild.getAttribute('value')}</p>
+            <button 
+              name='${checkbox.firstChild.getAttribute('name')}'
+              value='${checkbox.firstChild.getAttribute('value')}' 
+              onclick='remove(this)'
+            >
+              <i class='fa fa-close'></i>
+            </button>
+          </div>`;
+        }
+      });
+    
+    
+    
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("mySidenav").style.border = "1px solid #cccccc";
       }
-    });
-  
-  
-  
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("mySidenav").style.border = "1px solid #cccccc";
-    }
-  
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("mySidenav").style.border = "none";
-    }
-    function add(some) {
-      let newUrl = window.location.href;
-      console.log(some.checked);
-      if (some.checked) {
-        //add query
-        if (newUrl.indexOf('?') == -1) {
-          newUrl += `?${some.getAttribute('name')}=${some.getAttribute('value')}`;
+    
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("mySidenav").style.border = "none";
+      }
+      function add(some) {
+        let newUrl = window.location.href;
+        console.log(some.checked);
+        if (some.checked) {
+          //add query
+          if (newUrl.indexOf('?') == -1) {
+            newUrl += `?${some.getAttribute('name')}=${some.getAttribute('value')}`;
+          }
+          else {
+            newUrl += `&${some.getAttribute('name')}=${some.getAttribute('value')}`
+          }
         }
         else {
-          newUrl += `&${some.getAttribute('name')}=${some.getAttribute('value')}`
+          //remove query
+          newUrl = newUrl.split('%20').join(' ');
+          const query = `${some.getAttribute('name')}=${some.getAttribute('value')}`;
+          const inx = newUrl.indexOf(query);
+          if (newUrl.indexOf(`${some.getAttribute('name')}=${some.getAttribute('value')}`) > -1) {
+            if (newUrl[inx - 1] === '&') {
+              newUrl = newUrl.replace('&' + query, '');
+            }
+            else {
+              newUrl = newUrl.replace(query, '');
+            }
+          }
         }
+        window.location.href = newUrl; //this line will redirect to new location
       }
-      else {
-        //remove query
+      function remove(ele) {
+        let newUrl = window.location.href;
         newUrl = newUrl.split('%20').join(' ');
-        const query = `${some.getAttribute('name')}=${some.getAttribute('value')}`;
+        const query = `${ele.getAttribute('name')}=${ele.getAttribute('value')}`;
         const inx = newUrl.indexOf(query);
-        if (newUrl.indexOf(`${some.getAttribute('name')}=${some.getAttribute('value')}`) > -1) {
+        if (newUrl.indexOf(`${ele.getAttribute('name')}=${ele.getAttribute('value')}`) > -1) {
           if (newUrl[inx - 1] === '&') {
             newUrl = newUrl.replace('&' + query, '');
           }
           else {
             newUrl = newUrl.replace(query, '');
           }
+          window.location.href = newUrl; //this line will redirect to new location
         }
       }
-      window.location.href = newUrl; //this line will redirect to new location
-    }
-    function remove(ele) {
-      let newUrl = window.location.href;
-      newUrl = newUrl.split('%20').join(' ');
-      const query = `${ele.getAttribute('name')}=${ele.getAttribute('value')}`;
-      const inx = newUrl.indexOf(query);
-      if (newUrl.indexOf(`${ele.getAttribute('name')}=${ele.getAttribute('value')}`) > -1) {
-        if (newUrl[inx - 1] === '&') {
-          newUrl = newUrl.replace('&' + query, '');
-        }
-        else {
-          newUrl = newUrl.replace(query, '');
-        }
-        window.location.href = newUrl; //this line will redirect to new location
-      }
-    }
-  </script>
+    </script>
+
+  </body>
+
+  
 </html>
