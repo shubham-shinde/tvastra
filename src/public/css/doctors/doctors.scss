@@ -49,8 +49,8 @@ h3{
 
 .sort_container .sidenav {
     height: 100%;
-    width: 0;
-    /* position: fixed; */
+    width: 0px;
+     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
@@ -58,6 +58,9 @@ h3{
     overflow-x: hidden;
     transition: 0.5s;
     flex:1;    // padding-top: 60px;
+    @media only screen and (min-width:1224px){
+        position: unset;
+    }
   }
   
   .sort_container .sidenav a {
@@ -150,12 +153,17 @@ width: 100%;
       color: #0099ff;
     //   margin: 1rem;
       border: 1px solid #cccccc;
-      padding-bottom: 1rem;
+    //   padding-bottom: 1rem;
+    margin-bottom: 1rem;
       
   }
   .img_container img{
+      margin-top: .5rem;
     object-fit: cover;
     height: 25rem;
+    @media only screen and (min-width:450px){
+        margin-top:0;
+    }
   }
   .img_container h3::before{
     content: "";
@@ -372,7 +380,7 @@ width: 100%;
         }
     }
     .main_container2{
-        padding-left: 1rem;
+        // padding-left: 1rem;
         flex:3;
     }
 }

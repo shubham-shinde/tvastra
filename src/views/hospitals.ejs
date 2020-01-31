@@ -41,14 +41,240 @@
       href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
     />
-  </head> -->
+   -->
+   
+   </head>
 
   <body>
     <% include ./partials/common/header %>
 
-    <h1>Hospitals section</h1>
+    <div class="sort_button" onclick="openNav()">
+      <h3>Home / Hospital List</h3>
+      <div class="button_container"><button>Sort by</button><i class="fa fa-angle-down"></i></div>
+    </div>
+     <!-- <span class="sort_button" onclick="openNav()">
+    <div class="button_container"><button>Sort by</button><i class="fa fa-angle-down"></i></div>
+    </span> -->
+    <div class="sort_container">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="filter_container" id="filter">
+  
+  
+        </div>
+        <div class="menu">
+          <div class="head_container">
+            <h3>Location</h3>
+            <div>
+              <i class="fa fa-search"></i>
+              <i class="fa fa-minus" style="color: #afaeae"></i>
+            </div>
+          </div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="dlf" name="location"
+              value="DLF Cyber City"><label for="dlf"> DLF Cyber City</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="dwaraka" name="location"
+              value="Dwaraka"><label for="dwaraka"> Dwaraka</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="lajpat" name="location"
+              value="Lajpat Nagar"> <label for="lajpat">Lajpat Nagar</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="palam" name="location"
+              value="Palam Vihar"><label for="palam">Palam Vihar</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="punjabi" name="location"
+              value="Punjabi Baag"><label for="punjabi">Punjabi Baag</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="pusa" name="location"
+              value="Pusa Road"><label for="pusa">Pusa Road</label></div>
+          <span style="color: #0099ff; font-weight: 600; margin-top: 0.5rem;">+ Show more</span>
+        </div>
+        <div class="menu">
+          <div class="head_container">
+            <h3>Treatment</h3>
+            <div>
+              <i class="fa fa-search"></i>
+              <i class="fa fa-minus" style="color: #afaeae"></i>
+            </div>
+          </div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='multi' name="treatment"
+              value="Multi Organ Transplant"><label for="multi">Multi Organ Transplant</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='orthopedic' name="treatment"
+              value="Orthopedic Surgery"><label for="orthopedic">Orthopedic Surgery</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='infertility' name="treatment"
+              value="Infertility Treatment"><label for="infertility">Infertility Treatment</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='dentistry' name="treatment"
+              value="Dentistry"><label for="dentistry">Dentistry</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="cardiology" name="treatment"
+              value="Cardiology"><label for="cardiology">Cardiology</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='cancer' name="treatment"
+              value="Cancer">Cancer</div>
+          <span style="color: #0099ff; font-weight: 600; margin-top: 0.5rem;">+ Show more</span>
+        </div>
+        <div class="menu">
+          <div class="head_container">
+            <h3>Hospitals</h3>
+            <div>
+              <i class="fa fa-search"></i>
+              <i class="fa fa-minus" style="color: #afaeae"></i>
+            </div>
+          </div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="apollo" name="hospital"
+              value="Apollo Hospital"><label for="apollo">Apollo Hospital</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="manipal" name="hospital"
+              value="Manipal North Side Hospital"><label for="manipal">Manipal North Side Hospital</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="northstar" name="hospital"
+              value="Northstar"><label for="northstar">Northstar</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id='aiims' name="hospital"
+              value="AIIMs"><label for="aiims">AIIMs</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="fortis" name="hospital"
+              value="Fortis Hospital"><label for="fortis">Fortis Hospital</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="elbit" name="hospital"
+              value="Elbit Diagnostics"><label for="elbit">Elbit Diagnostics</label></div>
+          <span style="color: #0099ff; font-weight: 600; margin-top: 0.5rem;">+ Show more</span>
+        </div>
+        <i class="fa fa-minus" style="color: #afaeae"></i>
+  
+        <div class="menu">
+          <div class="head_container">
+            <h3>Years of Experience</h3>
+            <div>
+              <i class="fa fa-search"></i>
+              <i class="fa fa-minus" style="color: #afaeae"></i>
+            </div>
+          </div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="30" name="workexperience"
+              value="30"><label for="30">30+</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="25" name="workexperience"
+              value="25"><label for="25">25+</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="20" name="workexperience"
+              value="20"><label for="20">20+</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="15" name="workexperience"
+              value="15"><label for="15">15+</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="10" name="workexperience"
+              value="10"><label for="10">10+</label></div>
+          <div class="checkbox_container"><input type="checkbox" onclick=add(this) id="5" name="workexperience"
+              value="5"><label for="5">5+</label></div>
+        </div>
+      </div>
+  
+      <div class="main_container2">
+        <% if(doctors.length){ 
+          for (var i =0; i < doctors.length; i++ ) { %>
+        <div class="img_container">
+          <div class="content">
+            <h3><%= doctors[i].name %></h3>
+            <div class="content2">
+              <div class="logos">
+                <i class="fa fa-certificate"></i>
+                <%= doctors[i].specialisation %>
+              </div>
+              <div class="logos">
+                <img src="./images/certificate.png">
+                <%= doctors[i].qualification %>
+              </div>
+              <div class="logos">
+                <i class="fa fa-clock-o"></i>
+                <%= doctors[i].workexperience %> Years of Experience
+              </div>
+              <div class="logos">
+                <i class="fa fa-hospital-o"></i>
+                <%= doctors[i].hospital %>
+              </div>
+              <div class="logos">
+                <i class="fa fa-map-marker"></i>
+                <%= doctors[i].location %>
+              </div>
+            </div>
+            <button>Book an appointment</button>
+          </div>
+          <!-- <img src=<%= doctors[i].img ? doctors[i].img : `images/image--00${(doctors[i].workexperience%5)+2}.jpg` %>> -->
+        </div>
+        <% } } %>
+      </div>
+    </div>
     
     <% include ./partials/common/footer %>
 
+
+    
+
   </body>
+
+  <script>
+
+    let url = window.location.search;
+    console.log(url);
+    url = url.split('%20').join(' ');
+    const checkboxes = document.getElementsByClassName('checkbox_container');
+    // console.log(checkboxes);
+  
+    console.log(url);
+    [...checkboxes].forEach(checkbox => {
+      if (url.indexOf(checkbox.firstChild.getAttribute('value')) > -1) {
+        checkbox.firstChild.checked = true;
+        document.getElementById("filter").innerHTML +=
+          `<div class='filter_button'>
+          <p>${checkbox.firstChild.getAttribute('value')}</p>
+          <button 
+            name='${checkbox.firstChild.getAttribute('name')}'
+            value='${checkbox.firstChild.getAttribute('value')}' 
+            onclick='remove(this)'
+          >
+            <i class='fa fa-close'></i>
+          </button>
+        </div>`;
+      }
+    });
+  
+  
+  
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("mySidenav").style.border = "1px solid #cccccc";
+    }
+  
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("mySidenav").style.border = "none";
+    }
+    function add(some) {
+      let newUrl = window.location.href;
+      console.log(some.checked);
+      if (some.checked) {
+        //add query
+        if (newUrl.indexOf('?') == -1) {
+          newUrl += `?${some.getAttribute('name')}=${some.getAttribute('value')}`;
+        }
+        else {
+          newUrl += `&${some.getAttribute('name')}=${some.getAttribute('value')}`
+        }
+      }
+      else {
+        //remove query
+        newUrl = newUrl.split('%20').join(' ');
+        const query = `${some.getAttribute('name')}=${some.getAttribute('value')}`;
+        const inx = newUrl.indexOf(query);
+        if (newUrl.indexOf(`${some.getAttribute('name')}=${some.getAttribute('value')}`) > -1) {
+          if (newUrl[inx - 1] === '&') {
+            newUrl = newUrl.replace('&' + query, '');
+          }
+          else {
+            newUrl = newUrl.replace(query, '');
+          }
+        }
+      }
+      window.location.href = newUrl; //this line will redirect to new location
+    }
+    function remove(ele) {
+      let newUrl = window.location.href;
+      newUrl = newUrl.split('%20').join(' ');
+      const query = `${ele.getAttribute('name')}=${ele.getAttribute('value')}`;
+      const inx = newUrl.indexOf(query);
+      if (newUrl.indexOf(`${ele.getAttribute('name')}=${ele.getAttribute('value')}`) > -1) {
+        if (newUrl[inx - 1] === '&') {
+          newUrl = newUrl.replace('&' + query, '');
+        }
+        else {
+          newUrl = newUrl.replace(query, '');
+        }
+        window.location.href = newUrl; //this line will redirect to new location
+      }
+    }
+  </script>
 </html>
