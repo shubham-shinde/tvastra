@@ -153,25 +153,179 @@
         </div>
       </div>
   
-      <div class="main_container2">
-        <% if(hospitals.length){ 
-          for (var i =0; i < hospitals.length; i++ ) { %>
-        <div class="img_container">
-          <div class="content">
-            <h3><%= hospitals[i].name %></h3>
-            <div class="content2">
-              
-              <div class="logos">
-                <i class="fa fa-map-marker"></i>
-                <%= hospitals[i].location %>
+        <div class="main_container2">
+          <div class="img_container">
+            <div class="content">
+              <h3>Apollo Hospital</h3>
+              <div class="content2 hospital-wrapper">
+                <div class="logos">
+                  <i class="fa fa-map-marker"></i>
+                  Delhi Mathura Road, Sarita Vihar, Delhi 110076
+                </div>
+                <div class="logos">
+                  <i class="fa fa-bed"></i>
+                  100 beds
+                </div>
+                <div class="logos">
+                  <i class="fa fa-stethoscope"></i>
+                Famous Treatments
+                </div>
+                
               </div>
+              <div class="treatment-list-wrapper">
+                <ul>
+                  <li>
+                    Multi Organ Transplant
+                  </li>
+                  <li>Orthopedic Surgery</li>
+                  <li>Infertility Treatment</li>
+                  <li>Dentistry</li>
+                  <li>Cardiology</li>
+                  <li>Cancer</li>
+                  <li>+40 more</li>
+                </ul>
+              </div>
+              <button class="call-now">Call Now</button>
             </div>
-            <button>Book an appointment</button>
+            
+            
+            <div class="image-wrapper">
+            <img src="./images/apollo.webp">
           </div>
-          <img src=<%= hospitals[i].img ? hospitals[i].img : `images/image--00${(hospitals[i].workexperience%5)+2}.jpg` %>>
+
+
+
+          </div>
+          <div class="img_container">
+            <div class="content">
+              <h3>Fortis Hospital</h3>
+              <div class="content2 hospital-wrapper">
+                <div class="logos">
+                  <i class="fa fa-map-marker"></i>
+                  Delhi Mathura Road, Sarita Vihar, Delhi 110076
+                </div>
+                <div class="logos">
+                  <i class="fa fa-bed"></i>
+                  100 beds
+                </div>
+                <div class="logos">
+                  <i class="fa fa-stethoscope"></i>
+                Famous Treatments
+                </div>
+                
+              </div>
+              <div class="treatment-list-wrapper">
+                <ul>
+                  <li>
+                    Multi Organ Transplant
+                  </li>
+                  <li>Orthopedic Surgery</li>
+                  <li>Infertility Treatment</li>
+                  <li>Dentistry</li>
+                  <li>Cardiology</li>
+                  <li>Cancer</li>
+                  <li>+40 more</li>
+                </ul>
+              </div>
+              <button class="call-now">Call Now</button>
+            </div>
+            
+            
+            <div class="image-wrapper">
+            <img src="./images/fortis.jpg">
+          </div>
+
+
+
+          </div>
+
+          <div class="img_container">
+            <div class="content">
+              <h3>Rockland Hospital</h3>
+              <div class="content2 hospital-wrapper">
+                <div class="logos">
+                  <i class="fa fa-map-marker"></i>
+                  Delhi Mathura Road, Sarita Vihar, Delhi 110076
+                </div>
+                <div class="logos">
+                  <i class="fa fa-bed"></i>
+                  100 beds
+                </div>
+                <div class="logos">
+                  <i class="fa fa-stethoscope"></i>
+                Famous Treatments
+                </div>
+                
+              </div>
+              <div class="treatment-list-wrapper">
+                <ul>
+                  <li>
+                    Multi Organ Transplant
+                  </li>
+                  <li>Orthopedic Surgery</li>
+                  <li>Infertility Treatment</li>
+                  <li>Dentistry</li>
+                  <li>Cardiology</li>
+                  <li>Cancer</li>
+                  <li>+40 more</li>
+                </ul>
+              </div>
+              <button class="call-now">Call Now</button>
+            </div>
+            
+            
+            <div class="image-wrapper">
+            <img src="./images/rockland.jpg">
+          </div>
+
+
+
+          </div>
+          <div class="img_container">
+            <div class="content">
+              <h3>Primus Super Speciality Hospital</h3>
+              <div class="content2 hospital-wrapper">
+                <div class="logos">
+                  <i class="fa fa-map-marker"></i>
+                  Delhi Mathura Road, Sarita Vihar, Delhi 110076
+                </div>
+                <div class="logos">
+                  <i class="fa fa-bed"></i>
+                  sdfsf
+                </div>
+                <div class="logos">
+                  <i class="fa fa-stethoscope"></i>
+                Famous Treatments
+                </div>
+                
+              </div>
+              <div class="treatment-list-wrapper">
+                <ul>
+                  <li>
+                    Multi Organ Transplant
+                  </li>
+                  <li>Orthopedic Surgery</li>
+                  <li>Infertility Treatment</li>
+                  <li>Dentistry</li>
+                  <li>Cardiology</li>
+                  <li>Cancer</li>
+                  <li>+40 more</li>
+                </ul>
+              </div>
+              <button class="call-now">Call Now</button>
+            </div>
+            
+            
+            <div class="image-wrapper">
+            <img src="./images/primus_super_speciality_hospital.jpg">
+          </div>
+
+
+
+          </div>
         </div>
-        <% } } %>
-      </div>
+
+
     </div>
     
     <% include ./partials/common/footer %>

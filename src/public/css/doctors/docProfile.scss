@@ -16,6 +16,24 @@ font-size: 1.2rem;
             font-weight: 540;
             color:rgb(19, 88, 192);
         }
+
+        .content2{
+            display: flex;
+            margin-top:1rem;
+            font-size: .9rem;
+
+
+            .logos{
+                &:nth-last-child(1){
+                    margin-left: 2rem;
+                }
+                i{
+                    color: #0099ff;
+                    margin-right: .3rem;
+                }
+            }
+            
+        }
         .about{
             margin-top: 1rem;
             font-size: .9rem;
